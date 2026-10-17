@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Liceu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liceu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFAF6F0E30839AB60057C738 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -30,6 +31,7 @@
 		000000000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				AFAF6F0E30839AB60057C738 /* Makefile */,
 				000000000000000000000010 /* Liceu */,
 				000000000000000000000020 /* Products */,
 			);
