@@ -1,0 +1,15 @@
+{
+  "originHash" : "0caff445516ee844df5edbd215e0872867ae6b9eb6e34ec7cede99f94569a348",
+  "pins" : [
+    {
+      "identity" : "fsrs",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/belavistadev/fsrs",
+      "state" : {
+        "branch" : "main",
+        "revision" : "8ccad0b5a7fbe6429f15debba66f553acbd7ae32"
+      }
+    }
+  ],
+  "version" : 3
+}

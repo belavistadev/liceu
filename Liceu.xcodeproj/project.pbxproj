@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AFAF6F233083A1280057C738 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AFAF6F223083A1280057C738 /* LICENSE */; };
 		AFAF6F253083A14C0057C738 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFAF6F243083A14C0057C738 /* README.md */; };
+		AFAF6F403083A3AA0057C738 /* FSRS in Frameworks */ = {isa = PBXBuildFile; productRef = AFAF6F3F3083A3AA0057C738 /* FSRS */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		000000000000000130000000 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			files = (
+				AFAF6F403083A3AA0057C738 /* FSRS in Frameworks */,
 			);
 		};
 		AFAF6F2D3083A1940057C738 /* Frameworks */ = {
@@ -94,6 +96,9 @@
 				000000000000000000000010 /* Liceu */,
 			);
 			name = Liceu;
+			packageProductDependencies = (
+				AFAF6F3F3083A3AA0057C738 /* FSRS */,
+			);
 			productName = MyApp;
 			productReference = 000000000000000000000120 /* Liceu.app */;
 			productType = "com.apple.product-type.application";
@@ -147,6 +152,9 @@
 			);
 			mainGroup = 000000000000000000000001;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				AFAF6F3E3083A3AA0057C738 /* XCRemoteSwiftPackageReference "fsrs" */,
+			);
 			preferredProjectObjectVersion = 90;
 			productRefGroup = 000000000000000000000020 /* Products */;
 			projectDirPath = "";
@@ -495,6 +503,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AFAF6F3E3083A3AA0057C738 /* XCRemoteSwiftPackageReference "fsrs" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/belavistadev/fsrs";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AFAF6F3F3083A3AA0057C738 /* FSRS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AFAF6F3E3083A3AA0057C738 /* XCRemoteSwiftPackageReference "fsrs" */;
+			productName = FSRS;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 000000000000000000000000 /* Project object */;
 }
