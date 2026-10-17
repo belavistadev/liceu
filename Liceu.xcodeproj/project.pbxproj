@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		AFAF6F233083A1280057C738 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AFAF6F223083A1280057C738 /* LICENSE */; };
+		AFAF6F253083A14C0057C738 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AFAF6F243083A14C0057C738 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		000000000000000000000120 /* Liceu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Liceu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFAF6F0E30839AB60057C738 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		AFAF6F223083A1280057C738 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		AFAF6F243083A14C0057C738 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -39,6 +41,7 @@
 				AFAF6F0E30839AB60057C738 /* Makefile */,
 				000000000000000000000010 /* Liceu */,
 				AFAF6F223083A1280057C738 /* LICENSE */,
+				AFAF6F243083A14C0057C738 /* README.md */,
 				000000000000000000000020 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +113,7 @@
 		000000000000000140000000 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			files = (
+				AFAF6F253083A14C0057C738 /* README.md in Resources */,
 				AFAF6F233083A1280057C738 /* LICENSE in Resources */,
 			);
 		};
