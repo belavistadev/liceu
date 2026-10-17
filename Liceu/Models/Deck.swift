@@ -13,6 +13,9 @@ final class Deck {
     var title: String = ""
     var summary: String?
     var isArchived: Bool = false
+    // Relationship
+    @Relationship(deleteRule: .cascade, inverse: \Flashcard.deck)
+    var flashcards: [Flashcard]? = []
     // Metadata
     var creationDate: Date = Date.now
     var modificationDate: Date = Date.now
