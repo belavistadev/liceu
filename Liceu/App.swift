@@ -13,6 +13,6 @@ import SwiftUI
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [Deck.self])
+        .modelContainer(for: [Deck.self, Flashcard.self])
     }
 }

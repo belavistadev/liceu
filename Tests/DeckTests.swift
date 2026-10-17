@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import Liceu
+import SwiftData
 import Testing
 
 struct DeckTests {
@@ -46,5 +47,57 @@ struct DeckTests {
 
         deck.isArchived = true
         #expect(deck.isArchived)
+    }
+}
+
+struct DeckFlashcardRelationshipTests {
+    let container: ModelContainer
+    let context: ModelContext
+
+    init() throws {
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+        container = try ModelContainer(for: Deck.self, Flashcard.self, configurations: configuration)
+        context = ModelContext(container)
+    }
+
+    @Test("Assigning a deck to a flashcard adds it to the deck's flashcards")
+    func flashcardIsAddedToDeck() throws {
+        let deck = Deck(title: "French")
+        let flashcard = Flashcard(front: "Bonjour", back: "Bom dia")
+        context.insert(deck)
+        context.insert(flashcard)
+
+        flashcard.deck = deck
+
+        #expect(deck.flashcards?.contains(flashcard) == true)
+    }
+
+    @Test("Deleting a deck deletes its flashcards")
+    func deletingDeckDeletesFlashcards() throws {
+        let deck = Deck(title: "French")
+        context.insert(deck)
+        context.insert(Flashcard(front: "Bonjour", back: "Bom dia", deck: deck))
+        context.insert(Flashcard(front: "Merci", back: "Obrigado", deck: deck))
+        try context.save()
+
+        context.delete(deck)
+        try context.save()
+
+        #expect(try context.fetchCount(FetchDescriptor<Flashcard>()) == 0)
+    }
+
+    @Test("Deleting a flashcard keeps its deck")
+    func deletingFlashcardKeepsDeck() throws {
+        let deck = Deck(title: "French")
+        let flashcard = Flashcard(front: "Bonjour", back: "Bom dia", deck: deck)
+        context.insert(deck)
+        context.insert(flashcard)
+        try context.save()
+
+        context.delete(flashcard)
+        try context.save()
+
+        #expect(try context.fetchCount(FetchDescriptor<Deck>()) == 1)
+        #expect(deck.flashcards?.isEmpty == true)
     }
 }
