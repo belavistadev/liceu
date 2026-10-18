@@ -1,0 +1,6 @@
+While taking a break in the fediverse, I saw a toot that complained
+about macOS apps using sheet/modal where not needed, just because it's
+how iOS/iPadOS do. It might be a good idea to consider an alternative
+approach for macOS for presenting the DeckFormView.
+
+Reference: https://mastodon.social/@marioguzman/117448592302314415
