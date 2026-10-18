@@ -9,7 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct DeckFormView: View {
-    @Environment(\.modelContext) var modelContext
+    @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
     @State private var title = ""
     @State private var summary = ""
