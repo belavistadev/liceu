@@ -48,6 +48,7 @@ struct DeckFormView: View {
                     save()
                     dismiss()
                 }
+                .disabled(trim(title).isEmpty)
             }
         }
     }
