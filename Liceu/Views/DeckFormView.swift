@@ -38,7 +38,7 @@ struct DeckFormView: View {
     private var form: some View {
         Form {
             TextField("Title", text: $title)
-            TextField("Summary", text: $summary, axis: .vertical)
+            TextField("Summary (Optional)", text: $summary, axis: .vertical)
                 .lineLimit(3 ... 5)
         }
         .navigationTitle("New Deck")
