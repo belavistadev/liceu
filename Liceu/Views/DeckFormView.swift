@@ -19,14 +19,14 @@ struct DeckFormView: View {
         NavigationStack {
             form
         }
-        .interactiveDismissDisabled(hasChange)
+        .interactiveDismissDisabled(hasChanges)
     }
 
     private func trim(_ text: String) -> String {
         return text.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    private var hasChange: Bool {
+    private var hasChanges: Bool {
         !trim(title).isEmpty || !trim(summary).isEmpty
     }
 
@@ -46,7 +46,7 @@ struct DeckFormView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel", role: .cancel) {
-                    if hasChange {
+                    if hasChanges {
                         isShowingDismissConfirmation = true
                     } else {
                         dismiss()
