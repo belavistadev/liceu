@@ -19,6 +19,7 @@ struct DeckFormView: View {
         NavigationStack {
             form
         }
+        .interactiveDismissDisabled(hasChange)
     }
 
     private func trim(_ text: String) -> String {
