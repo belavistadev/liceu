@@ -20,6 +20,15 @@ struct DeckFormView: View {
         }
     }
 
+    private func trim(_ text: String) -> String {
+        return text.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private func save() {
+        let deck = Deck(title: trim(title), summary: trim(summary))
+        modelContext.insert(deck)
+    }
+
     private var form: some View {
         Form {
             TextField("Title", text: $title)
@@ -36,8 +45,7 @@ struct DeckFormView: View {
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save", role: .confirm) {
-                    let deck = Deck(title: title, summary: summary)
-                    modelContext.insert(deck)
+                    save()
                     dismiss()
                 }
             }
