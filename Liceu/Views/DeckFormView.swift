@@ -13,6 +13,7 @@ struct DeckFormView: View {
     @Environment(\.dismiss) private var dismiss
     @State private var title = ""
     @State private var summary = ""
+    @State private var isShowingDismissConfirmation = false
 
     var body: some View {
         NavigationStack {
@@ -22,6 +23,10 @@ struct DeckFormView: View {
 
     private func trim(_ text: String) -> String {
         return text.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var hasChange: Bool {
+        !trim(title).isEmpty || !trim(summary).isEmpty
     }
 
     private func save() {
@@ -40,7 +45,15 @@ struct DeckFormView: View {
         .toolbar {
             ToolbarItem(placement: .cancellationAction) {
                 Button("Cancel", role: .cancel) {
-                    dismiss()
+                    if hasChange {
+                        isShowingDismissConfirmation = true
+                    } else {
+                        dismiss()
+                    }
+                }
+                .alert("Discard this Deck?", isPresented: $isShowingDismissConfirmation) {
+                    Button("Discard Changes", role: .destructive) { dismiss() }
+                    Button("Keep Editing", role: .cancel) {}
                 }
             }
             ToolbarItem(placement: .confirmationAction) {
