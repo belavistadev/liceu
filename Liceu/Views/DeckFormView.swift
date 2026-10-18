@@ -54,10 +54,6 @@ struct DeckFormView: View {
                         dismiss()
                     }
                 }
-                .alert("Discard this Deck?", isPresented: $isShowingDismissConfirmation) {
-                    Button("Discard Changes", role: .destructive) { dismiss() }
-                    Button("Keep Editing", role: .cancel) {}
-                }
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save", role: .confirm) {
@@ -66,6 +62,9 @@ struct DeckFormView: View {
                 }
                 .disabled(trim(title).isEmpty)
             }
+        }
+        .confirmationDialog("Discard new Deck?", isPresented: $isShowingDismissConfirmation) {
+            Button("Discard Changes", role: .destructive) { dismiss() }
         }
     }
 }
