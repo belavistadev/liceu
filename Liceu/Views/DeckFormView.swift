@@ -31,7 +31,9 @@ struct DeckFormView: View {
     }
 
     private func save() {
-        let deck = Deck(title: trim(title), summary: trim(summary))
+        let trimmedSummary = trim(summary)
+        let nonEmptySummary = trimmedSummary.isEmpty ? nil : trimmedSummary
+        let deck = Deck(title: trim(title), summary: nonEmptySummary)
         modelContext.insert(deck)
     }
 
