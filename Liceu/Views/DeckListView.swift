@@ -11,6 +11,7 @@ import SwiftUI
 struct DeckListView: View {
     @Query(sort: \Deck.creationDate, order: .reverse) private var decks: [Deck]
     @State private var selectedDeckID: Deck.ID?
+    @State private var isShowingForm: Bool = false
 
     /// Resolves the selected ID to its live model.
     private var selectedDeck: Deck? {
@@ -27,6 +28,9 @@ struct DeckListView: View {
                 ContentUnavailableView("Select a Deck", systemImage: "rectangle.stack")
             }
         }
+        .sheet(isPresented: $isShowingForm) {
+            DeckFormView()
+        }
     }
 
     private var list: some View {
@@ -36,6 +40,13 @@ struct DeckListView: View {
             }
         }
         .navigationTitle("Decks")
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button("New Deck", systemImage: "rectangle.stack.badge.plus") {
+                    isShowingForm.toggle()
+                }
+            }
+        }
     }
 }
 
