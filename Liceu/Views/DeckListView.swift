@@ -38,3 +38,8 @@ struct DeckListView: View {
         .navigationTitle("Decks")
     }
 }
+
+#Preview {
+    DeckListView()
+        .modelContainer(for: [Deck.self, Flashcard.self], inMemory: true)
+}
