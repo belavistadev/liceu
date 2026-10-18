@@ -11,7 +11,7 @@ import SwiftUI
 @main struct Liceu: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DeckListView()
         }
         .modelContainer(for: [Deck.self, Flashcard.self])
     }
