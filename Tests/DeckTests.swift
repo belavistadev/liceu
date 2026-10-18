@@ -61,7 +61,7 @@ struct DeckFlashcardRelationshipTests {
     }
 
     @Test("Assigning a deck to a flashcard adds it to the deck's flashcards")
-    func flashcardIsAddedToDeck() throws {
+    func flashcardIsAddedToDeck() {
         let deck = Deck(title: "French")
         let flashcard = Flashcard(front: "Bonjour", back: "Bom dia")
         context.insert(deck)

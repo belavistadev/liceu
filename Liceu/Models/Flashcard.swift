@@ -13,8 +13,8 @@ final class Flashcard {
     var front: String = ""
     var back: String = ""
     var isArchived: Bool = false
-    // Relationship
-    var deck: Deck? = nil
+    /// Relationship
+    var deck: Deck?
     // Metadata
     var creationDate: Date = Date.now
     var modificationDate: Date = Date.now
@@ -24,6 +24,6 @@ final class Flashcard {
         self.back = back
         self.deck = deck
         self.creationDate = creationDate
-        self.modificationDate = creationDate
+        modificationDate = creationDate
     }
 }

@@ -16,7 +16,7 @@ struct FlashcardTests {
         #expect(flashcard.front == "Bonjour")
         #expect(flashcard.back == "Bom dia")
     }
-    
+
     @Test("Flashcard's creation date is registered on init")
     func flashcardHasCreationDate() {
         let now = Date.now
@@ -41,7 +41,7 @@ struct FlashcardTests {
         flashcard.isArchived = true
         #expect(flashcard.isArchived)
     }
-    
+
     @Test("Flashcard should have a deck associated")
     func flashcardHasDeck() {
         let deck = Deck(title: "French")
